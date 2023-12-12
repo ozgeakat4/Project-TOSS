@@ -27,31 +27,21 @@ public class SeleniumTest extends AbstractTest{
 	@Override
 	void runTest() {
 		// TODO Auto-generated method stub
-
 		
 	}
 	
-	void clicks() {
+	void clicks(String buton) {
 		// TODO Auto-generated method stub
-		String button= ((String)driver.driverConfiguration.get("loginWeb"));//burası önemli
+		buton= ((String)driver.driverConfiguration.get(buton));
 		driver.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30000));
-		driver.driver.findElement(By.id(button)).click(); // burasıda
-		//System.out.println(driver.driverConfiguration.get("loginWeb")); 
+		driver.driver.findElement(By.id(buton)).click(); 
+	}
+	void type(String input,String buton) {
+		
+		driver.driver.findElement(By.id(buton)).sendKeys(input); 
 	}
 	
 	
-	/*
-	 * public static void click() throws IOException,
-	 * org.json.simple.parser.ParseException { JSONParser parser = new JSONParser();
-	 * try { FileReader reader =new FileReader(
-	 * "/Users/ozgeakat/eclipse-workspace/projectTossI/src/test/resources/config.json"
-	 * ); gg = (JSONObject) parser.parse(reader);
-	 * 
-	 * } catch (FileNotFoundException e) { e.printStackTrace(); }
-	 * System.out.println(gg.get("loginWeb"));
-	 * 
-	 * }
-	 */
 	
 
 }
