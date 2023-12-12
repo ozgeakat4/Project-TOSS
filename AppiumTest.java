@@ -22,13 +22,15 @@ public class AppiumTest extends AbstractTest{
 		
 	}
 	@Override
-	void clicks() {
+	void clicks(String buton) {
 		// TODO Auto-generated method stub
-		String button= ((String)drivers.driverConfiguration.get("skipApp"));//burası önemli
-		System.out.println(button);
+		buton= ((String)drivers.driverConfiguration.get(buton));//burası önemli
 		drivers.drivers.manage().timeouts().implicitlyWait(Duration.ofSeconds(30000));
-		 drivers.drivers.findElement(By.id(button)).click(); // burasıda
+		drivers.drivers.findElement(By.id(buton)).click(); 
 		 
+	}
+	void type(String input,String buton) {
+		drivers.drivers.findElement(By.id(buton)).sendKeys(input); 
 	}
 
 }
