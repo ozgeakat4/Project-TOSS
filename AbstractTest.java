@@ -13,6 +13,7 @@ public abstract class AbstractTest {
 	}
 	
 	abstract void runTest();
-	abstract void clicks();
+	abstract void clicks(String buton);
 	
 }
+
